@@ -93,21 +93,28 @@ export default function Dashboard() {
                                             <ListItemAvatar>
                                                 <GiZigzagLeaf />
                                             </ListItemAvatar>
-                                            <ListItemText primary="Soil Temperature:" secondary={data.Humidity} />
+                                            <ListItemText primary="Humidity:" secondary={data.Humidity} />
+                                        </ListItem>
+                                        <Divider variant="inset" component="li" />
+                                        <ListItem>
+                                            <ListItemAvatar>
+                                                <GiZigzagLeaf />
+                                            </ListItemAvatar>
+                                            <ListItemText primary="Soil Temperature:" secondary="0" />
                                         </ListItem>
                                         <Divider variant="inset" component="li" />
                                         <ListItem>
                                             <ListItemAvatar>
                                                 <GiWaterDrop />
                                             </ListItemAvatar>
-                                            <ListItemText primary="Soil Moisture:" secondary={data.Humidity} />
+                                            <ListItemText primary="Soil Moisture:" secondary={data.Soil_Moisture} />
                                         </ListItem>
                                         <Divider variant="inset" component="li" />
                                         <ListItem>
                                             <ListItemAvatar>
                                                 <FaSun />
                                             </ListItemAvatar>
-                                            <ListItemText primary="Light:" secondary={data.Humidity} />
+                                            <ListItemText primary="Light:" secondary={data.Light} />
                                         </ListItem>
 
                                     </List>
