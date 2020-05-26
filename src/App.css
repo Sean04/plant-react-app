@@ -1,5 +1,9 @@
 .App {
-    color: white;
-    background-color: #303030;
+    /* color: white; */
+    /* background-color: #303030; */
 }
 
+.Dashboard {
+    padding: 50px 50px 50px 50x;
+    /* background-color: #202020; */
+}
