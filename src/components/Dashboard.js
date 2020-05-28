@@ -19,12 +19,14 @@ import {
 
 import { FaTemperatureHigh, FaSun } from 'react-icons/fa';
 import { GiZigzagLeaf, GiWaterDrop } from 'react-icons/gi';
+import { RiMistLine } from 'react-icons/ri';
 
 import LineChart from './LineChart';
 
 const useStyles = makeStyles({
     root: {
-        padding: '30px 30px 30px 30px'
+        padding: '30px 30px 30px 30px',
+        background: '#101010'
     }
 })
 
@@ -72,9 +74,10 @@ export default function Dashboard() {
 
     return (
         <Container >
-            <Paper className={classes.root} elevation={3}>
-                <Grid container spacing={2}>
+            {/* <Paper className={classes.root} elevation={3}> */}
+                <Grid container spacing={5}>
                     <Grid item xs={12}>
+                        <br></br>
                         <Typography variant="h2">Dashboard</Typography>
                     </Grid>
                     <Grid item xs={12}>
@@ -91,7 +94,7 @@ export default function Dashboard() {
                                         <Divider variant="inset" component="li" />
                                         <ListItem>
                                             <ListItemAvatar>
-                                                <GiZigzagLeaf />
+                                                <RiMistLine />
                                             </ListItemAvatar>
                                             <ListItemText primary="Humidity:" secondary={data.Humidity} />
                                         </ListItem>
@@ -131,7 +134,7 @@ export default function Dashboard() {
                         </Card>
                     </Grid>
                 </ Grid>
-            </Paper>
+            {/* </Paper> */}
         </Container>
     )
 }

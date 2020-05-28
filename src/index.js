@@ -3,10 +3,25 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const darkTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#1b5e20'
+    },
+    secondary: {
+      main: '#37474f'
+    },
+    type: 'dark',
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <ThemeProvider theme={darkTheme}> */}
+     <App />
+    {/* </ThemeProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
