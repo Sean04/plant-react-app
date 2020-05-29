@@ -19,7 +19,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const useStyles = makeStyles({
   root: {
-    // background: '#303030'
+    background: '#eceff1',
+    minHeight: '1000'
   }
 })
 
