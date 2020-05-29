@@ -36,6 +36,9 @@ function App() {
           </Grid>
           <Grid item className={classes.root}>
             <Switch>
+              <Route path="/ctenanthe">
+                <Dashboard name="Ctenanthe" />
+              </Route>
               <Route path="/dashboard">
                 <Dashboard />
               </Route>

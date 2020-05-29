@@ -41,7 +41,7 @@ export default function PlantCard(props) {
 
     return (
         <Card>
-        <CardActionArea>
+        <CardActionArea href="/ctenanthe">
             <CardMedia
                 className={classes.media}
                 component="img"

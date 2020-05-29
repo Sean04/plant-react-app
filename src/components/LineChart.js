@@ -3,20 +3,24 @@ import Chart from 'react-apexcharts';
 
 import { Button } from '@material-ui/core';
 
-export default function LineChart() {
+export default function LineChart(props) {
     const [ state, setState ] = useState({
         options: {
             chart: {
                 id: "basic-line",
-                background: "#fff"
+                // background: "#fff"
+            },
+            title: {
+                text: props.title
             },
             xaxis: {
+                type: 'datetime',
                 categories: []
             }
         },
         series: [
             {
-                name: "series-1",
+                name: props.title,
                 data: []
             }
         ]
@@ -28,18 +32,34 @@ export default function LineChart() {
         .then(new_data => {
             const graphDataPoints = []
             new_data.forEach((item, index) => {
-                graphDataPoints.push(item.Temperature);
-            });
-            // console.log(graphDataPoints);
+                // Date string parsing
+                var date_string = item.Date.slice(0, item.Date.length-2);
+                date_string = date_string.concat("Z");
+                const d = new Date(date_string);
+                const t = d.getTime();
 
-            // const new_state = state;
-            // new_state.series.data = graphDataPoints;
-            // console.log(new_state);
+                switch(props.title) {
+                    case "Temperature":
+                        graphDataPoints.push([t, item.Temperature]);
+                        break;
+                    case "Humidity":
+                        graphDataPoints.push([t, item.Humidity]);
+                        break;
+                    case "Light":
+                        graphDataPoints.push([t, item.Light]);
+                        break;
+                    default:
+                        graphDataPoints.push([t, item.Temperature]);
+                }
+            });
+
+            console.log(graphDataPoints);
+
             setState({
                 options: state.options,
                 series: [
                     {
-                        name: "Temperature",
+                        name: props.title,
                         data: graphDataPoints.slice(graphDataPoints.length-100, graphDataPoints.length)
                     }
                 ]

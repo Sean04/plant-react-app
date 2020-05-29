@@ -17,14 +17,14 @@ const MuiAppBar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography className={classes.typographyStyles} variant="h4">
-                    <Link href='/' color="inherit">Plant Me</Link>
+                    LeafLab
                 </Typography>
                 <Button
                     variant="contained"
                     color="secondary"
                     startIcon={<DashboardIcon />}
-                    href="/dashboard">
-                    Dashboard
+                    href="/">
+                    Home
                 </Button>
             </Toolbar>
         </AppBar>
