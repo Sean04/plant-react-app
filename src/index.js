@@ -8,20 +8,20 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 const darkTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#1b5e20'
+      main: '#4caf50'
     },
     secondary: {
-      main: '#37474f'
+      main: '#ff9800'
     },
-    type: 'dark',
+    type: 'light',
   },
 });
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ThemeProvider theme={darkTheme}> */}
+    <ThemeProvider theme={darkTheme}>
      <App />
-    {/* </ThemeProvider> */}
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

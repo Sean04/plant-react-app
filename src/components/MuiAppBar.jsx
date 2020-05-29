@@ -4,10 +4,13 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import { makeStyles } from '@material-ui/styles';
 import 'typeface-roboto';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     typographyStyles: {
         flex: 1
-    }
+    },
+    appBar: {
+        zIndex: theme.zIndex.drawer + 1,
+      },
 }));
 
 const MuiAppBar = () => {
